@@ -16,7 +16,6 @@ CONTRACT_ADDRESS = w3.to_checksum_address('0x32400084C286CF3E17e7B677ea9583e60a0
 zksync_contract = w3.eth.contract(address=CONTRACT_ADDRESS, abi=CONTRACT_ABI)
 eth_quantity = w3.to_wei(eth_quantity_to_bridge, 'ether')
 
-
 async def interact_with_contract(wallet_address, private_key):
 
     contract_address_l2 = wallet_address
