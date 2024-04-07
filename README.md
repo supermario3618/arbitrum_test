@@ -1,5 +1,5 @@
 Professional README Guide
-November 14, 2023
+
 Disponible en español
 A polished GitHub profile is an important part of your public identity as a developer. Why? For one thing, it will most likely be the first place that potential employers look to evaluate your skills and professionalism. And it also allows you to connect with and showcase your work to other developers, which can lead to interesting collaborations.
 
