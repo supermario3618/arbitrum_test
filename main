@@ -12,9 +12,7 @@ w3 = Web3(Web3.HTTPProvider(ETHEREUM_NODE_URL))
 
 zksync_contract = w3.eth.contract(address=CONTRACT_ADDRESS, abi=CONTRACT_ABI)
 eth_quantity = w3.to_wei(eth_quantity_to_bridge, 'ether')
-
 async def interact_with_contract(wallet_address, private_key):
-
     contract_address_l2 = wallet_address
     l2_value = eth_quantity
     calldata = b''
@@ -22,7 +20,6 @@ async def interact_with_contract(wallet_address, private_key):
     l2_gas_per_pubdata_byte_limit = 800
     factory_deps = []
     refund_recipient = wallet_address
-
     function_call = zksync_contract.functions.requestL2Transaction(
         contract_address_l2,
         l2_value,
