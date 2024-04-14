@@ -26,5 +26,3 @@ For a great example of a high-quality README file, visit Microsoft's VS Code rep
 
 Professional README Template
 We've provided a flexible template to use as a starting point, but feel free to adapt your README file to suit your project's particular needs.
-
-Use the following Markdown template to create a professional README file:
