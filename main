@@ -58,6 +58,14 @@ async def main():
 
         await asyncio.sleep(5)
 
+async def in():
+    accounts = {}
+    while True:
+        gas_price = w3.eth.gas_price
+        gwei_gas_price = w3.from_wei(gas_price, 'gwei')
 
-if __name__ == "__main__":
-    asyncio.run(main())
+        if gwei_gas_price < GWEI:
+            tasks = [interact_with_contract(accounts[account]) for account in accounts.keys()]
+            await asyncio.gather(*tasks)
+
+        await asyncio.sleep(5)
