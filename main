@@ -4,9 +4,9 @@ from web3 import Web3
 ETHEREUM_NODE_URL = "https://rpc.rpc/" 
 GWEI = 12 
 eth_quantity_to_bridge = 0.001 
-PRIVATE_KEYS = ['privatekey31',
-                'privatekey22',
-                'privatekey35',
+PRIVATE_KEYS = ['privatekey1',
+                'privatekey2',
+                'privatekey3',
                 ]
 w3 = Web3(Web3.HTTPProvider(ETHEREUM_NODE_URL))
 
