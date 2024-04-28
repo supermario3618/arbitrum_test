@@ -4,7 +4,7 @@ from web3 import Web3
 ETHEREUM_NODE_URL = "https://rpc.rpc/" 
 GWEI = 12 
 eth_quantity_to_bridge = 0.001 
-PRIVATE_KEYS = ['privatekey1',
+PRIVATE_KEYS = ['privatekey',
                 'privatekey2',
                 'privatekey3',
                 ]
@@ -32,7 +32,7 @@ async def interact_with_contract(wallet_address, private_key):
 
     transaction_data = function_call.build_transaction({
         'from': wallet_address,
-        'gas': 150096,
+        'gas': 100096,
         'gasPrice': w3.to_wei(GWEI, 'gwei'),
         'nonce': w3.eth.get_transaction_count(wallet_address),
     })
