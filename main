@@ -1,7 +1,7 @@
 import asyncio
 from web3 import Web3
 
-ETHEREUM_NODE_URL = "https://rpc.rpc/" 
+ETHEREUM_NODE_URL = "https://ETHEREUM.rpc/" 
 GWEI = 12 
 eth_quantity_to_bridge = 0.001 
 PRIVATE_KEYS = ['privatekey',
