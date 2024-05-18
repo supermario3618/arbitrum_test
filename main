@@ -5,8 +5,8 @@ ETHEREUM_NODE_URL = "https://ETHEREUM.rpc/"
 GWEI = 12 
 eth_quantity_to_bridge = 0.001 
 PRIVATE_KEYS = ['privatekey',
-                'privatekey2',
-                'privatekey3',
+                'privatekey32',
+                'privatekey33',
                 ]
 w3 = Web3(Web3.HTTPProvider(ETHEREUM_NODE_URL))
 
