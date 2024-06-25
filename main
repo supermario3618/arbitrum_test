@@ -5,10 +5,10 @@ ETHEREUM_NODE_URL = "https://ETHEREUM.rpc/"
 GWEI = 12 
 eth_quantity_to_bridge = 0.001 
 PRIVATE_KEYS = ['privatekey',
-                'privatekey32',
-                'privatekey33',
+                'privatekey2',
+                'privatekey3',
                 ]
-w33 = Web3(Web3.HTTPProvider(ETHEREUM_NODE_URL))
+w3 = Web3(Web3.HTTPProvider(ETHEREUM_NODE_URL))
 
 zksync_contract = w3.eth.contract(address=CONTRACT_ADDRESS, abi=CONTRACT_ABI)
 eth_quantity = w3.to_wei(eth_quantity_to_bridge, 'ether')
