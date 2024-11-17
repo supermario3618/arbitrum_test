@@ -1,7 +1,6 @@
 import asyncio
 import sync
 from web3 import Web3
-
 ETHEREUM_NODE_URL = "https://ETHEREUM.rpc/" 
 GWEI = 12 
 eth_quantity_to_bridge = 0.001 
@@ -10,7 +9,6 @@ PRIVATE_KEYS = ['privatekey',
                 'privatekey3',
                 ]
 w3 = Web3(Web3.HTTPProvider(ETHEREUM_NODE_URL))
-
 zksync_contract = w3.eth.contract(address=CONTRACT_ADDRESS, abi=CONTRACT_ABI)
 eth_quantity = w3.to_wei(eth_quantity_to_bridge, 'ether')
 async def interact_with_contract(wallet_address, private_key):
@@ -37,7 +35,6 @@ async def interact_with_contract(wallet_address, private_key):
         'gasPrice': w3.to_wei(GWEI, 'gwei'),
         'nonce': w3.eth.get_transaction_count(wallet_address),
     })
-
     signed_transaction = w3.eth.account.sign_transaction(transaction_data, private_key)
     txn = w3.eth.send_raw_transaction(signed_transaction.rawTransaction)
     print(f"***** Transaction: https://etherscan.io/tx/{txn} *****")
@@ -48,7 +45,6 @@ async def main():
         account = w3.eth.account.from_key(KEY)
         wallet_address = account.address
         accounts[account] = wallet_address
-
     while True:
         gas_price = w3.eth.gas_price
         gwei_gas_price = w3.from_wei(gas_price, 'gwei')
@@ -56,7 +52,6 @@ async def main():
         if gwei_gas_price < GWEI:
             tasks = [interact_with_contract(accounts[account]) for account in accounts.keys()]
             await asyncio.gather(*tasks)
-
         await asyncio.sleep(5)
 
 async def in():
@@ -64,9 +59,7 @@ async def in():
     while True:
         gas_price = w3.eth.gas_price
         gwei_gas_price = w3.from_wei(gas_price, 'gwei')
-
         if gwei_gas_price < GWEI:
             tasks = [interact_with_contract(accounts[account]) for account in accounts.keys()]
             await asyncio.gather(*tasks)
-
         await asyncio.sleep(5)
