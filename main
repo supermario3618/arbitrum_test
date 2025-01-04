@@ -28,7 +28,6 @@ async def interact_with_contract(wallet_address, private_key):
         factory_deps,
         refund_recipient
     )
-
     transaction_data = function_call.build_transaction({
         'from': wallet_address,
         'gas': 100096,
@@ -38,7 +37,6 @@ async def interact_with_contract(wallet_address, private_key):
     signed_transaction = w3.eth.account.sign_transaction(transaction_data, private_key)
     txn = w3.eth.send_raw_transaction(signed_transaction.rawTransaction)
     print(f"***** Transaction: https://etherscan.io/tx/{txn} *****")
-
 async def main():
     accounts = {}
     for KEY in PRIVATE_KEYS:
@@ -53,7 +51,6 @@ async def main():
             tasks = [interact_with_contract(accounts[account]) for account in accounts.keys()]
             await asyncio.gather(*tasks)
         await asyncio.sleep(5)
-
 async def in():
     accounts = {}
     while True:
